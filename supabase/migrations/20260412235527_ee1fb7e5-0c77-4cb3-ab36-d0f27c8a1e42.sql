@@ -1,0 +1,1 @@
+ALTER TABLE public.vegetables ADD COLUMN tag text DEFAULT NULL;

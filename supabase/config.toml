@@ -1,0 +1,13 @@
+project_id = "jmdzrewdmqssbwlqovrp"
+
+[functions.admin-login]
+verify_jwt = false
+
+[functions.vegetables-admin]
+verify_jwt = false
+
+[functions.customer-admin]
+verify_jwt = false
+
+[functions.notify-telegram]
+verify_jwt = false
