@@ -1,0 +1,216 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Fresh vegetable market colors */
+    --background: 140 25% 97%;
+    --foreground: 150 15% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 150 15% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 15% 12%;
+
+    /* Fresh green - main brand */
+    --primary: 145 65% 38%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Light green surface */
+    --secondary: 145 35% 94%;
+    --secondary-foreground: 145 65% 25%;
+
+    --muted: 140 12% 92%;
+    --muted-foreground: 140 8% 45%;
+
+    /* Warm accent for highlights */
+    --accent: 32 95% 52%;
+    --accent-foreground: 32 95% 12%;
+
+    /* Price highlight color */
+    --price: 145 70% 32%;
+    --price-foreground: 0 0% 100%;
+    --price-bg: 145 50% 95%;
+
+    /* Status colors */
+    --success: 145 75% 42%;
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 38 95% 12%;
+
+    --destructive: 0 78% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --unavailable: 0 0% 72%;
+    --unavailable-foreground: 0 0% 42%;
+
+    --border: 145 18% 86%;
+    --input: 145 18% 86%;
+    --ring: 145 65% 38%;
+
+    --radius: 0.625rem;
+
+    /* Custom shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(150 15% 12% / 0.04);
+    --shadow-md: 0 4px 8px -2px hsl(150 15% 12% / 0.08), 0 2px 4px -2px hsl(150 15% 12% / 0.04);
+    --shadow-lg: 0 12px 20px -4px hsl(150 15% 12% / 0.1), 0 4px 8px -4px hsl(150 15% 12% / 0.06);
+    --shadow-card: 0 1px 3px 0 hsl(145 65% 38% / 0.06), 0 2px 8px -2px hsl(150 15% 12% / 0.06);
+    --shadow-price: 0 2px 8px -2px hsl(145 70% 32% / 0.25);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 150 12% 8%;
+    --foreground: 145 8% 94%;
+
+    --card: 150 12% 11%;
+    --card-foreground: 145 8% 94%;
+
+    --popover: 150 12% 11%;
+    --popover-foreground: 145 8% 94%;
+
+    --primary: 145 60% 48%;
+    --primary-foreground: 150 12% 8%;
+
+    --secondary: 145 20% 16%;
+    --secondary-foreground: 145 45% 78%;
+
+    --muted: 150 10% 18%;
+    --muted-foreground: 145 8% 58%;
+
+    --accent: 32 85% 52%;
+    --accent-foreground: 32 95% 95%;
+
+    --price: 145 65% 52%;
+    --price-foreground: 150 12% 8%;
+    --price-bg: 145 30% 15%;
+
+    --success: 145 65% 48%;
+    --success-foreground: 150 12% 8%;
+
+    --destructive: 0 68% 52%;
+    --destructive-foreground: 0 0% 100%;
+
+    --unavailable: 0 0% 42%;
+    --unavailable-foreground: 0 0% 68%;
+
+    --border: 150 10% 18%;
+    --input: 150 10% 18%;
+    --ring: 145 60% 48%;
+
+    --shadow-price: 0 2px 12px -2px hsl(145 65% 52% / 0.35);
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: 'Noto Sans TC', system-ui, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Smooth animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.4s ease-out forwards;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+/* Stagger children animations */
+.stagger-children > * {
+  opacity: 0;
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+.stagger-children > *:nth-child(1) { animation-delay: 0.05s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.1s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.15s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.2s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.25s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.3s; }
+.stagger-children > *:nth-child(7) { animation-delay: 0.35s; }
+.stagger-children > *:nth-child(8) { animation-delay: 0.4s; }
+.stagger-children > *:nth-child(9) { animation-delay: 0.45s; }
+.stagger-children > *:nth-child(10) { animation-delay: 0.5s; }
